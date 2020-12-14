@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private int desiredLane = 1; // 0左 1中 2右
     public float laneDistance = 4; // 两条路之间的距离（左右移动的距离）
 
+    public float jumpForce;
+    public float Gravity = -20;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,20 @@ public class PlayerController : MonoBehaviour
     {
         //controller.Move(direction * Time.deltaTime); // 移动随帧数而变化
         direction.z = forwardSpeed;
+
+
+        if (controller.isGrounded)
+        {
+            direction.y = -1;
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            direction.y += Gravity * Time.deltaTime;
+        }
 
         // 从输入判断应该在哪条路（左、中、右）
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -57,5 +73,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(direction * Time.fixedDeltaTime);
+    }
+
+    private void Jump()
+    {
+        direction.y = jumpForce;
     }
 }
