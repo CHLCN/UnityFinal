@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Events : MonoBehaviour
 {
+    public GameObject quizPanal;
+    public GameObject gameOverPanel;
+
     public void ReplayGame()
     {
         SceneManager.LoadScene("Level");
@@ -15,6 +18,8 @@ public class Events : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("");
+        PlayerManager.gameOver = false;
+        quizPanal.SetActive(true);
+
     }
 }
