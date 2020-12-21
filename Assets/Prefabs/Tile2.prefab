@@ -163,6 +163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficCone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dbab1175708e2cf40a260f5d77456a8f, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dbab1175708e2cf40a260f5d77456a8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -231,6 +235,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: dbab1175708e2cf40a260f5d77456a8f, type: 3}
       propertyPath: m_Name
       value: TrafficCone
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dbab1175708e2cf40a260f5d77456a8f, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dbab1175708e2cf40a260f5d77456a8f, type: 3}
       propertyPath: m_LocalPosition.x

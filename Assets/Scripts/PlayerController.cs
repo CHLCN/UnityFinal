@@ -65,7 +65,18 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.right * laneDistance;
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
+
+        // 碰撞后停止向前移动
+        //transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
+        //controller.center = controller.center;
+        if (transform.position == targetPosition)
+            return;
+        Vector3 diff = targetPosition - transform.position;
+        Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+        if (moveDir.sqrMagnitude < diff.sqrMagnitude)
+            controller.Move(moveDir);
+        else
+            controller.Move(diff);
 
     }
 
@@ -78,5 +89,14 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         direction.y = jumpForce;
+    }
+
+    // 碰撞检测
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.transform.tag == "Obstacle")
+        {
+            PlayerManager.gameOver = true;
+        }
     }
 }

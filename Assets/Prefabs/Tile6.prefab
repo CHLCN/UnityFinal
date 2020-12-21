@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadWorksBarrierLow
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5b054accfd288d64399c4156c0e5d491, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5b054accfd288d64399c4156c0e5d491, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
