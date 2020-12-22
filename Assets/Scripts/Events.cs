@@ -20,6 +20,5 @@ public class Events : MonoBehaviour
     {
         PlayerManager.gameOver = false;
         quizPanal.SetActive(true);
-
     }
 }
