@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
-    private Question[] questions = new Question[] {
+    public Question[] questions = new Question[] {
         new Question { fact = "0的倒数还是0", isTrue = false },
         new Question { fact = "细菌必须用电子显微镜才能看到", isTrue = false },
         new Question { fact = "古人把山南水北称“阳”，山北水南称“阴”", isTrue = true },

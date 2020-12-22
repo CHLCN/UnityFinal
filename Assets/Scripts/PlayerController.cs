@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 // Ctrl K+Ctrl D
 public class PlayerController : MonoBehaviour
 {
@@ -23,13 +21,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //controller.Move(direction * Time.deltaTime); // 移动随帧数而变化
+
+
+
         direction.z = forwardSpeed;
 
 
         if (controller.isGrounded)
         {
-            //direction.y = -1;
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            //direction.y = -2;
+            if (Input.GetKeyDown(KeyCode.UpArrow) || SwipeManager.swipeUp)
             {
                 Jump();
             }
@@ -40,13 +41,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // 从输入判断应该在哪条路（左、中、右）
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || SwipeManager.swipeRight)
         {
             desiredLane++;
             if (desiredLane == 3)
                 desiredLane = 2;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || SwipeManager.swipeLeft)
         {
             desiredLane--;
             if (desiredLane == -1)
@@ -83,6 +84,8 @@ public class PlayerController : MonoBehaviour
     // 不受帧数影响，处理物理逻辑
     private void FixedUpdate()
     {
+        if (!PlayerManager.isGameStarted)
+            return;
         controller.Move(direction * Time.fixedDeltaTime);
     }
 

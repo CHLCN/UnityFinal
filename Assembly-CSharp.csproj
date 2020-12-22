@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Question.cs" />
     <Compile Include="Assets\Scripts\QuizManager.cs" />
+    <Compile Include="Assets\Scripts\SwipeManager.cs" />
     <Compile Include="Assets\Scripts\TileManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>G:/Program Files/Unity/projects/finalProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
