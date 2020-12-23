@@ -6,10 +6,10 @@ public class Events : MonoBehaviour
     public GameObject quizPanal;
     public GameObject gameOverPanel;
 
-    public void ReplayGame()
-    {
-        SceneManager.LoadScene("Level");
-    }
+    //public void ReplayGame()
+    //{
+    //    SceneManager.LoadScene("Level");
+    //}
 
     public void QuitGame()
     {

@@ -19,6 +19,7 @@ public class QuizManager : MonoBehaviour
     private static List<Question> unansweredQuestions;
     public GameObject quizPanel;
     public GameObject gameOverPanel;
+    public GameObject startingText;
 
     private Question currentQuestion;
 
@@ -49,16 +50,16 @@ public class QuizManager : MonoBehaviour
 
     }
 
-    IEnumerator waiting()
+    private IEnumerator waiting()
     {
+        Debug.Log("waiting");
 
-        yield return new WaitForSeconds(100 * Time.deltaTime); // 一定要加上Time.deltatime 未解决
+        yield return new WaitForSeconds(timeAfterQuestion * Time.deltaTime); // 一定要加上Time.deltatime 未解决
         //quizPanel.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 
-    IEnumerator gameOver()
+    private IEnumerator gameOver()
     {
         yield return new WaitForSeconds(timeAfterQuestion * Time.deltaTime);
         //quizPanel.SetActive(false);
