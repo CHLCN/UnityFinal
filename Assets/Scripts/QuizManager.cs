@@ -63,7 +63,8 @@ public class QuizManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeAfterQuestion * Time.deltaTime);
         //quizPanel.SetActive(false);
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("Menu");
 
     }
 

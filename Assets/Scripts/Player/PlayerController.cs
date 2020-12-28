@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            //direction.y = -2;
             if (Input.GetKeyDown(KeyCode.UpArrow) || SwipeManager.swipeUp)
             {
                 Jump();
@@ -90,24 +89,25 @@ public class PlayerController : MonoBehaviour
         // 碰撞后停止向前移动
         //transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.deltaTime);
         //controller.center = controller.center;
-        if (transform.position == targetPosition)
-            return;
-        Vector3 diff = targetPosition - transform.position;
-        Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
-        if (moveDir.sqrMagnitude < diff.sqrMagnitude)
-            controller.Move(moveDir);
-        else
-            controller.Move(diff);
+        if (transform.position != targetPosition)
+        {
+
+            Vector3 diff = targetPosition - transform.position;
+            Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+            if (moveDir.sqrMagnitude < diff.sqrMagnitude)
+                controller.Move(moveDir);
+            else
+                controller.Move(diff);
+        }
+
+
+
+        //移动player
+        controller.Move(direction * Time.deltaTime);
 
     }
 
-    // 不受帧数影响，处理物理逻辑
-    private void FixedUpdate()
-    {
-        if (!PlayerManager.isGameStarted)
-            return;
-        controller.Move(direction * Time.fixedDeltaTime);
-    }
+
 
     private void Jump()
     {

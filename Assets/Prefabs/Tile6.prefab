@@ -93,12 +93,13 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 39be753918e6e4f49b594f95adf0e001, type: 3}
-  - {fileID: 2100002, guid: 39be753918e6e4f49b594f95adf0e001, type: 3}
-  - {fileID: 2100004, guid: 39be753918e6e4f49b594f95adf0e001, type: 3}
+  - {fileID: 2100000, guid: d10708eb03ad1c3418cc3a3d3b4f8810, type: 2}
+  - {fileID: 2100000, guid: 09a14a6db00089b4aa4aed1733c0ae34, type: 2}
+  - {fileID: 2100000, guid: 9fbd09c11b779c04c8ff4f3e905479e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,6 +107,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -661,6 +663,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 345.0614
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5b054accfd288d64399c4156c0e5d491, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f224b17650cf52149984bb82cd2be523, type: 2}
+    - target: {fileID: 2300000, guid: 5b054accfd288d64399c4156c0e5d491, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: efbc5490bc31d1440aab083d3b2dfa5e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b054accfd288d64399c4156c0e5d491, type: 3}
 --- !u!1 &7600119941451648988 stripped
